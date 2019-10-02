@@ -1,6 +1,6 @@
 {
     "name": "emforbfc/adminbundle",
-    "type": "project",
+    "type": "symfony-bundle",
     "license": "proprietary",
     "description": "Admin Bundle",
     "require": {
