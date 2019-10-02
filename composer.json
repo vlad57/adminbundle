@@ -32,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "emforbfc\\AdminBundle\\": "src"
+            "": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "emforbfc\\AdminBundle\\Tests\\": "tests"
+            "": "tests"
         }
     },
     "conflict": {
