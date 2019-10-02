@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace emforbfc\AdminBundle\Controller;
 
 use App\Entity\Infos;
 use App\Entity\News;
