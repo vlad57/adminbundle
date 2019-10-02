@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UsersController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container">
+    <a href="{{ path('crud.new', {'page': app.request.attributes.get('_route_params')['page']}) }}" style="float: right;" class="btn">Ajouter</a>
+
+        {% for data in data %}
+            {% dump(data) %}
+            {% for i in 0..data|length - 3 %}
+                {% if data[i] is not iterable %}
+                    <p style="display: inline-block; padding-right: 10px;">{{ data[i] }}</p>
+                {% endif %}
+            {% endfor %}
+                <a href="{{ path('crud.edit', {page: app.request.attributes.get('_route_params')['page'], id: data['id']}) }}" style="padding-right: 10px;">Editer</a>
+                <form method="post" action="{{ path('crud.delete', {page: app.request.attributes.get('_route_params')['page'], id: data['id']}) }}" style="display: inline-block"
+                      onsubmit="return confirm('Supprimer ?')">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ data['id']) }}">
+                    <button class="btn btn-danger">Supprimer</button>
+                </form><br/>
+        {% endfor %}
+
+
+</div>
+{% endblock %}

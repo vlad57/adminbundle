@@ -87,7 +87,7 @@ class CrudController extends AbstractController
             $sliced_array[$i]['uuid'] = $getUuid;
         }
 
-        return $this->render('admin/crud/index.html.twig', [
+        return $this->render('@Admin/index.html.twig', [
             'data' => $sliced_array
         ]);
     }
@@ -116,7 +116,7 @@ class CrudController extends AbstractController
             $this->addFlash("success", "Créé avec succès");
             return $this->redirectToRoute('admin');
         }
-        return $this->render("admin/crud/new.html.twig", [
+        return $this->render("@Admin/new.html.twig", [
             "form" => $form->createView()
         ]);
     }
@@ -149,7 +149,7 @@ class CrudController extends AbstractController
             return $this->redirectToRoute('admin');
         }
 
-        return $this->render('admin/crud/edit.html.twig', [
+        return $this->render('@Admin/edit.html.twig', [
             'form' => $form->createView()
         ]);
     }
