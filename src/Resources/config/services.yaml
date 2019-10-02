@@ -1,3 +1,0 @@
-services:
-  emforbfc\AdminBundle\Controller\CrudController:
-    autoconfigure: true
