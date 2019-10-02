@@ -57,9 +57,8 @@
         }
     },
     "extra": {
-        "symfony": {
-            "allow-contrib": false,
-            "require": "4.3.*"
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
         }
     }
 }
